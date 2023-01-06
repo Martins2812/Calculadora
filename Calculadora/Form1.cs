@@ -100,7 +100,6 @@ namespace Calculadora
             }else if(operacao == "MULTIPLICACAO")
             {
                 txtResultado.Text = Convert.ToString(valor1 * valor2);
-
             }
             else
             {
@@ -111,34 +110,49 @@ namespace Calculadora
         //Método de SUBTRAÇÃO
         private void button8_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-
-            txtResultado.Text = "";
-
-            operacao = "SUBTRACAO";
-            lblOperacao.Text = "-";
+            if (txtResultado.Text != "")
+            {
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                txtResultado.Text = "";
+                operacao = "SUBTRACAO";
+                lblOperacao.Text = "-";
+            }
+            else
+            {
+                MessageBox.Show("Informe um valor para efetuar a subtração.");
+            }
         }
 
         //Método de SUBTRAÇÃO 
         private void button12_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-
-            txtResultado.Text = "";
-
-            operacao = "MULTIPLICACAO";
-            lblOperacao.Text = "x";
+            if (txtResultado.Text != "")
+            {
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                txtResultado.Text = "";
+                operacao = "MULTIPLICACAO";
+                lblOperacao.Text = "x";
+            }
+            else
+            {
+                MessageBox.Show("Informe um valor para efetuar a multiplicação.");
+            }
         }
 
         //Método de DIVISÃO
         private void button16_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-
-            txtResultado.Text = "";
-
-            operacao = "DIVISAO";
-            lblOperacao.Text = "/";
+            if (txtResultado.Text != "")
+            {
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                txtResultado.Text = "";
+                operacao = "DIVISAO";
+                lblOperacao.Text = "/";
+            }
+            else
+            {
+                MessageBox.Show("Informe um valor para efetuar a divisão.");
+            }
         }
 
         //Método C
@@ -153,14 +167,20 @@ namespace Calculadora
         //Método de SOMAR
         private void button4_Click(object sender, EventArgs e)
         {
-            //Convertendo para decimal (obs: 2,5)
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-
-            txtResultado.Text = "";
-
-            operacao = "SOMA";
-            lblOperacao.Text = "+";
+            if(txtResultado.Text != "")
+            {
+                //Convertendo para decimal (obs: 2,5)
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                txtResultado.Text = "";
+                operacao = "SOMA";
+                lblOperacao.Text = "+";
+            }
+            else
+            {
+                MessageBox.Show("Informe um valor para efetuar a soma.");
+            }
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
